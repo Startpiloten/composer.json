@@ -1,0 +1,44 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    }
+  ],
+  "name": "startpiloten/startpilot",
+  "description": "TYPO3 CMS Startpiloten",
+  "license": "GPL-2.0+",
+  "require": {
+    "typo3/cms": "8.*",
+    "helhum/typo3-console": "*",
+    "bo/t3toolbox": "dev-master",
+    "andres-montanez/magallanes": "^3.0",
+    "analogde/ce-gen": "dev-master"
+  },
+  "config": {
+    "secure-http": false,
+    "bin-dir": "."
+  },
+  "autoload": {
+    "psr-4": {
+      "Vendor\\Yourext\\": "web/typo3conf/ext/startpilot/Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "web"
+    },
+    "helhum/typo3-console": {
+      "install-binary": false
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "cd vendor/bo/t3toolbox && npm install --silent"
+    ],
+    "post-install-cmd": [
+      "cd vendor/bo/t3toolbox && npm install --silent"
+    ]
+  }
+}
