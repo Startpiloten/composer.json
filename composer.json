@@ -37,6 +37,16 @@
 		],
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
+		],
+		"post-update-cmd": [
+			"cd vendor/bo/t3toolbox && npm install",
+			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build install",
+			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build run-script build"
+		],
+		"post-install-cmd": [
+			"cd vendor/bo/t3toolbox && npm install",
+			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build install",
+			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build run-script build"
 		]
 	},
 	"config": {
