@@ -35,18 +35,23 @@
 			"typo3cms install:fixfolderstructure",
 			"typo3cms install:generatepackagestates"
 		],
+		"t3tools":[
+			"npm --prefix vendor/bo/t3toolbox install"
+		],
+		"builds":[
+			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build install",
+			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build run-script build"
+		],
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
 		],
 		"post-update-cmd": [
-			"cd vendor/bo/t3toolbox && npm install",
-			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build install",
-			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build run-script build"
+			"@t3tools",
+			"@builds"
 		],
 		"post-install-cmd": [
-			"cd vendor/bo/t3toolbox && npm install",
-			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build install",
-			"npm --prefix public/typo3conf/ext/startpilot/Resources/Build run-script build"
+			"@t3tools",
+			"@builds"
 		]
 	},
 	"config": {
