@@ -1,4 +1,4 @@
-# conposer.json example for 9LTS
+# composer.json example for 9LTS
 
 Optional: 
 
